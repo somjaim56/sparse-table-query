@@ -33,3 +33,10 @@ Range queries on a static array are a common need. A naive scan is O(n) per quer
 
 - `createSparseTable(arr, combine?)` — returns `{ query(left, right), size }`.
 - `defaultCombine(a, b)` — the default min combiner, exported so you can compose or inspect it.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
