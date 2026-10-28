@@ -1,6 +1,6 @@
 {
   "name": "sparse-table-query",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Static array preprocessing for constant-time range min or max queries via sparse table.",
   "type": "module",
   "main": "src/index.js",
